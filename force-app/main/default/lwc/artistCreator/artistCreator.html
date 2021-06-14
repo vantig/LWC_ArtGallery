@@ -1,0 +1,45 @@
+<template>
+    <lightning-card title="Create Artist Record" icon-name="standard:record">
+        <!--        <div style="margin-left: 6%" if:true={error}>-->
+        <!--            <lightning-badge label={error} style="color: red;"></lightning-badge>-->
+        <!--        </div>-->
+
+
+
+                <div class="container-fluid">
+
+                    <div class="form-group">
+                        <lightning-input label="Enter Name" required="required" type="text" value={record.Name}
+                                         onchange={handleNameChange}></lightning-input>
+                    </div>
+                    <div class="form-group">
+                        <lightning-input label="Enter LastName" required="required" type="text" value={record.LastName}
+                                         onchange={handleLastNameChange}></lightning-input>
+                    </div>
+                    <div class="form-group">
+                        <lightning-input label="Enter Email" required="required" type="email" value={record.Email}
+                                         onchange={handleEmailChange}></lightning-input>
+                    </div>
+                    <div class="form-group">
+                        <lightning-input label="Enter Phone" type="tel"
+                                          value={record.Phone}
+                                         onchange={handlePhoneChange}></lightning-input>
+                    </div>
+                    <div class="form-group">
+                        <lightning-input label="Enter Birthdate" required="required" type="date" date-style="short"
+                                         value={record.Birthdate} onchange={handleBirthdateChange}></lightning-input>
+                    </div>
+                </div>
+                <br/>
+                <lightning-button label="Save" onclick={handleCreate} variant="brand"></lightning-button>
+    </lightning-card>
+</template>
+<!--<template>-->
+<!--    <lightning-card title="LdsCreateRecord" icon-name="standard:record">-->
+<!--        <div class="slds-m-around_medium">-->
+<!--            <lightning-input label="Id" disabled value={accountId}></lightning-input>-->
+<!--            <lightning-input label="Name" onchange={handleNameChange} class="slds-m-bottom_x-small"></lightning-input>-->
+<!--            <lightning-button label="Create Account" variant="brand" onclick={createAccount}></lightning-button>-->
+<!--        </div>-->
+<!--    </lightning-card>-->
+<!--</template>-->

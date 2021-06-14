@@ -1,0 +1,14 @@
+<template>
+    <lightning-card>
+        <lightning-record-form
+                object-api-name={objectApiName}
+                fields={fields}
+                onsuccess={handleSuccess}>
+
+
+            <lightning-input type="file" label="Attachment" required
+                             message-when-value-missing="Please upload a file"></lightning-input>
+        </lightning-record-form>
+
+    </lightning-card>
+</template>
