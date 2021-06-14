@@ -1,5 +1,6 @@
 import { LightningElement } from 'lwc';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
+
 import PICTURE_OBJECT from '@salesforce/schema/Picture__c';
 import NAME_FIELD from '@salesforce/schema/Picture__c.Name';
 import ARTIST_FIELD from '@salesforce/schema/Picture__c.Artist__c';
