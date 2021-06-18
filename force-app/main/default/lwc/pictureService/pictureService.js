@@ -1,9 +1,14 @@
-/**
- * Created by igordeychik on 6/17/2021.
- */
+import {api, LightningElement, track, wire} from 'lwc';
+import getPictures from '@salesforce/apex/PictureDataService.getPictures';
 
-import {LightningElement} from 'lwc';
 
 export default class PictureService extends LightningElement {
 
+    // wired getPictures method
+    @wire(getPictures)
+    pictures
+
+    notifyLoading() {
+        this.dispatchEvent(new CustomEvent('loaded'));
+    }
 }

@@ -6,13 +6,20 @@
     background-size: cover;
     border-radius: 5px;
 }
-
+h1,h2{
+    font-family: cursive;
+    font-style: unset;
+    margin: 10px 0;
+    letter-spacing: 2px;
+}
 .selected {
     border: 3px solid rgb(0, 95, 178);
     border-radius: 5px;
 }
 
 .tile-wrapper {
+    background-color: aliceblue;
+    border-radius: 20px;
     cursor: pointer;
     padding: 5px;
 }

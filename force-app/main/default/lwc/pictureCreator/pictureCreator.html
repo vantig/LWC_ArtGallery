@@ -12,7 +12,7 @@
                 <c-lookup onvalueselected={handleArtistChange} object-api-name={pictureObject}
                           field-api-name={artistField} required="true"></c-lookup>
                 <div class="container">
-                    <lightning-input files={file} type="file" label="Attachment" required
+                    <lightning-input type="file" label="Attachment" required="true"
                                      onchange={onFileUpload}
                                      disabled={isFileLoading}
                                      message-when-value-missing="Please upload a file"

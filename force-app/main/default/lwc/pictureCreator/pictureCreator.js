@@ -8,7 +8,7 @@ export default class NewRecordWithFileUpload extends LightningElement {
 
     artistField = ARTIST_FIELD;
     pictureObject = PICTURE_OBJECT;
-    file;
+    file = {};
     isFileLoading = false;
     isLoaded = false;
     isSubmitting = false;
@@ -38,7 +38,6 @@ export default class NewRecordWithFileUpload extends LightningElement {
     }
 
     onFileUpload(event) {
-        this.file = {};
         this.isLoaded = false;
         this.isFileLoading = true;
         event.target.blur();
@@ -66,9 +65,13 @@ export default class NewRecordWithFileUpload extends LightningElement {
     }
 
     isValidForm() {
+        if (this.isEmptyObject(this.file)){
+
+        }
         this.template.querySelector('c-lookup').isValidForm();
         const isValid = [...this.template.querySelectorAll('lightning-input')]
             .reduce((validSoFar, inputCmp) => {
+
                 inputCmp.reportValidity();
                 return validSoFar && inputCmp.checkValidity();
             }, true);
@@ -95,7 +98,6 @@ export default class NewRecordWithFileUpload extends LightningElement {
         }
 
 
-        console.log(" this.isSubmitting after " + this.isSubmitting);
     }
 
     savePicture() {
@@ -107,6 +109,7 @@ export default class NewRecordWithFileUpload extends LightningElement {
             'Artist__c': this.artist,
             'Price__c': this.price,
         }
+        console.log(JSON.stringify(picture));
         createPicture({
             picture: picture,
             file: encodeURIComponent(this.file.fileContent),
@@ -140,7 +143,7 @@ export default class NewRecordWithFileUpload extends LightningElement {
     }
 
     resetFields() {
-        this.file = null;
+        this.file = {};
         this.isLoaded = false;
         this.template.querySelector('c-lookup').resetField();
 
@@ -150,6 +153,7 @@ export default class NewRecordWithFileUpload extends LightningElement {
         if (inputFields) {
             inputFields.forEach(field => {
                 field.value = null;
+                console.log(field.value);
             });
         }
     }

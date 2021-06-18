@@ -1,29 +1,23 @@
-import { LightningElement,api } from 'lwc';
-const TILE_WRAPPER_SELECTED_CLASS = "tile-wrapper selected";
-const TILE_WRAPPER_UNSELECTED_CLASS = "tile-wrapper";
-
+import {LightningElement, api} from 'lwc';
 
 export default class BotTile extends LightningElement {
 
-    @api boat;
-    @api selectedBoatId;
-    get backgroundStyle() {
-        return "background-image:url(${this.boat.Picture__c})";
+    @api  picture;
+
+    get imagePath() {
+        let path = this.picture.Picture_Image__c.replace("\\", '');
+        let startIndex = this.picture.Picture_Image__c.indexOf("\"") + 1;
+        let endIndex = this.picture.Picture_Image__c.indexOf(" alt")-1;
+
+        return path.substr(startIndex, endIndex - startIndex);
     }
 
-    get tileClass() {
-        return this.selectedBoatId ? TILE_WRAPPER_SELECTED_CLASS : TILE_WRAPPER_UNSELECTED_CLASS;
-    }
-    selectBoat() {
-        this.selectedBoatId = !this.selectedBoatId;
-        const boatselect = new CustomEvent("boatselect", {
+    selectPicture() {
+        const evt = new CustomEvent("pictureselect", {
             detail: {
-                boatId: this.boat.Id
+                id: this.picture.Id
             }
         });
-        this.dispatchEvent(boatselect);
+        this.dispatchEvent(evt);
     }
-
-
-
 }
