@@ -1,4 +1,4 @@
-import {api, LightningElement, track, wire} from 'lwc';
+import { LightningElement,  wire} from 'lwc';
 import getPictures from '@salesforce/apex/PictureDataService.getPictures';
 
 
