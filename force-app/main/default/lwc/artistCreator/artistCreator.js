@@ -1,8 +1,5 @@
-import {LightningElement, wire} from 'lwc';
-import {reduceErrors} from 'c/ldsUtils';
+import {LightningElement} from 'lwc';
 import {ShowToastEvent} from 'lightning/platformShowToastEvent';
-import {publish, MessageContext} from 'lightning/messageService';
-import PICTURE_CHANNEL from '@salesforce/messageChannel/Picture_Service__c';
 import createContactWithUser from '@salesforce/apex/ArtistHelper.createContactWithUser';
 import NAME_FIELD from '@salesforce/schema/Contact.Name';
 import EMAIL_FIELD from '@salesforce/schema/Contact.Email';
@@ -18,8 +15,6 @@ export default class ArtistCreator extends LightningElement {
     phoneField = PHONE_FIELD;
     birthdateField = BIRTHDATE_FIELD;
 
-    @wire(MessageContext)
-    messageContext;
 
     handleSubmit(event) {
         event.preventDefault();
@@ -49,7 +44,6 @@ export default class ArtistCreator extends LightningElement {
                     ]
                 });
                 this.dispatchEvent(evt);
-                publish(this.messageContext, PICTURE_CHANNEL, {updateData: true});
             })
             .catch(error => {
                 const evt = new ShowToastEvent({
