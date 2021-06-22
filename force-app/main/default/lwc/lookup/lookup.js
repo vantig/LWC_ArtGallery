@@ -23,7 +23,6 @@ export default class CustomLookup extends LightningElement {
     @api
     isValidForm() {
         let form = this.template.querySelector('lightning-input-field');
-        console.log((form));
         form.reportValidity();
 
     }

@@ -1,14 +1,12 @@
-import { LightningElement,  wire} from 'lwc';
-import getPictures from '@salesforce/apex/PictureDataService.getPictures';
-
+import {LightningElement} from 'lwc';
 
 export default class PictureService extends LightningElement {
 
-    // wired getPictures method
-    @wire(getPictures)
-    pictures
-
-    notifyLoading() {
-        this.dispatchEvent(new CustomEvent('loaded'));
+    filterByName(event){
+        this.template.querySelector('c-pictures-search-result').artistName = event.detail.name;
     }
+    searchPictures(event) {
+        this.template.querySelector('c-pictures-search-result').searchString = event.detail.searchString;
+    }
+
 }
