@@ -1,4 +1,5 @@
 <template>
+
     <lightning-card title="Create Picture Record" icon-name="standard:record">
         <form>
             <template if:true={isSubmitting}>
@@ -11,7 +12,7 @@
                 <c-lookup onvalueselected={handleArtistChange} object-api-name={pictureObject}
                           field-api-name={artistField} required="true"></c-lookup>
                 <div class="container">
-                    <lightning-input type="file" label="Attachment" required="true"
+                    <lightning-input class="file" type="file"  label="Attachment" required="true"
                                      onchange={onFileUpload}
                                      disabled={isFileLoading}
                                      message-when-value-missing="Please upload a file"

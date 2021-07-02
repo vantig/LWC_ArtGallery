@@ -16,6 +16,7 @@ IlluminatedCloud/
 .localdevserver/
 scripts/
 manifest/
+objects/
 # LWC VSCode autocomplete
 **/lwc/jsconfig.json
 

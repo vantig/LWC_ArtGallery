@@ -54,6 +54,4 @@ export default class PicturesSearchResult extends LightningElement {
         }
 
     }
-
-
 }

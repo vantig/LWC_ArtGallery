@@ -81,6 +81,12 @@ export default class NewRecordWithFileUpload extends LightningElement {
                 inputCmp.reportValidity();
                 return validSoFar && inputCmp.checkValidity();
             }, true);
+        // let fileinput =this.template.querySelector(".file");
+        // if (!this.isLoaded){
+        //     fileinput.setCustomValidity("Please upload a file")
+        // }else {
+        //     fileinput.setCustomValidity("")
+        // }
 
         return isValid && this.isLoaded && Boolean(this.artist);
     }
@@ -171,4 +177,5 @@ export default class NewRecordWithFileUpload extends LightningElement {
 
         return JSON.stringify(obj) === JSON.stringify({});
     }
+
 }
