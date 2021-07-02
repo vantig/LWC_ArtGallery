@@ -49,3 +49,5 @@ ehthumbs.db
 $RECYCLE.BIN/
 # Local environment variables
 .env
+#NPM
+package-lock.json
