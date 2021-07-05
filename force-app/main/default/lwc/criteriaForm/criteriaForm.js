@@ -19,7 +19,7 @@ export default class BoatSearchForm extends LightningElement {
         this.dispatchEvent(evt);
     }
 
-    handleSearchOptionChange(event) {
+     handleSearchOptionChange(event) {
 
         event.preventDefault();
         this.selectedValue = event.detail.value;
