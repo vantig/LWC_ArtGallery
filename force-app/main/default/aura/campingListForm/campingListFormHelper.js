@@ -1,6 +1,6 @@
 ({
     createItem: function (component, item){
-        let event = component.getEvent("updateExpense");
+        let event = component.getEvent("addItem");
         event.setParams({ "item": item });
         event.fire();
         component.set("v.newItem", {
