@@ -1,22 +1,21 @@
 ({
-    clickCreateItem: function(component, event, helper) {
-        var validItem = component.find('itemform').reduce(function (validSoFar, inputItem) {
-            // Displays error messages for invalid fields
-            inputItem.showHelpMessageIfInvalid();
-            return validSoFar && inputItem.get('v.validity').valid;
-        }, true);
-        // If we pass error checking, do some real work
-        if(validItem){
-            // Create the new item
-            var newItem = component.get("v.newItem");
-            console.log("Add item: " + JSON.stringify(newItem));
-            //helper.createItem(component, newItem);
-        }
-
-        var theItems = component.get("v.items");
-        theItems.push(newItem);
-        component.set("v.items", theItems);
-
+    doInit: function (component, event, helper) {
+        // Create the action
+        let action = component.get("c.getItems");
+        // Add callback behavior for when response is received
+        action.setCallback(this, function (response) {
+            let state = response.getState();
+            if (state === "SUCCESS") {
+                component.set("v.items", response.getReturnValue());
+            } else {
+                console.log("Failed with state: " + state);
+            }
+        });
+        // Send action off to be executed
+        $A.enqueueAction(action);
+    },
+    handleAddItem: function (component, event, helper) {
+        helper.createItem(event.getParam("item"))
     }
 
 })

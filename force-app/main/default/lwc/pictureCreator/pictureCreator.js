@@ -161,6 +161,9 @@ export default class NewRecordWithFileUpload extends LightningElement {
         if (inputFields) {
             inputFields.forEach(field => {
                 field.value = null;
+                if (field.files) {
+                    field.files = null
+                }
             });
         }
     }

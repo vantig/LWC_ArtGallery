@@ -1,4 +1,4 @@
-<aura:application extends="force:slds">
+<aura:application   implements="force:appHostable" extends="force:slds" >
     <c:campingHeader/>
     <c:campingList/>
 </aura:application>

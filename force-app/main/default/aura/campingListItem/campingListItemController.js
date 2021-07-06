@@ -1,7 +1,6 @@
 ({
-    packItem: function(component, event, helper) {
-        
-        event.getSource().set("v.disabled",true)
-        component.set("v.item.Packed__c", true);
+    clickPacked: function (component, event, helper) {
+        console.log(event.getSource().get("v.checked"));
+        component.set("v.item.Packed__c", event.getSource().get("v.checked"));
     },
 })
