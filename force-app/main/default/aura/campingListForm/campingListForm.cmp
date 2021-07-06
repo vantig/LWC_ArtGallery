@@ -1,4 +1,11 @@
 <aura:component description="campingListForm">
+    <aura:attribute name="newItem" type="Camping_Item__c"
+                    default="{ 'sobjectType': 'Camping_Item__c',
+                        'Name': '',
+                        'Quantity__c': 0,
+                        'Price__c': 0.00,
+                        'Packed__c': false }"/>
+    <aura:registerEvent name="addItem" type="c:addItemEvent"/>
     <!-- NEW EXPENSE FORM -->
     <lightning:layout>
         <lightning:layoutItem padding="around-small" size="6">
