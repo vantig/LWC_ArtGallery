@@ -1,6 +1,6 @@
 <aura:component implements="force:appHostable" controller="CampingListController">
     <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
-    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+
     <aura:attribute name="items" type="Camping_Item__c[]"/>
     <aura:handler name="addItem" event="c:addItemEvent"
                   action="{!c.handleAddItem}"/>
@@ -8,6 +8,4 @@
     <aura:iteration items="{!v.items}" var="item">
         <c:campingListItem item="{!item}"/>
     </aura:iteration>
-
-
 </aura:component>

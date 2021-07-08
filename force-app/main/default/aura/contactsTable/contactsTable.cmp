@@ -1,0 +1,19 @@
+<aura:component description="contactsTable" implements="flexipage:availableForAllPageTypes"
+                controller="ContactController">
+    <aura:handler event="c:selectAccount"
+                  action="{!c.handleSelectAccount}"/>
+    <aura:handler name="init" value="{! this }" action="{! c.init }"/>
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="contacts" type="Contact[]"/>
+    <aura:renderIf isTrue="{!empty(v.contacts)}">
+        <h1>nothing to show :(</h1>
+    </aura:renderIf>
+    <aura:renderIf isTrue="{!not(empty(v.contacts))}">
+        <lightning:datatable
+                keyField="id"
+                data="{! v.contacts }"
+                columns="{! v.columns }"
+                onrowaction="{! c.handleRowAction }"
+                hideCheckboxColumn="true"/>
+    </aura:renderIf>
+</aura:component>

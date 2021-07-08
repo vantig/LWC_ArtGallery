@@ -16,6 +16,7 @@
     },
     handleAddItem: function (component, event, helper) {
         let action = component.get("c.saveItem");
+        let item= event.getParam("item");
         action.setParams({
             "item": item
         });
