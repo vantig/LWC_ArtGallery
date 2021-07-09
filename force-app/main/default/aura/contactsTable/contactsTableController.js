@@ -15,12 +15,22 @@
         ]);
     },
     handleSelectAccount: function (component, event, helper) {
-        console.log("handle!");
         let account = event.getParam("account");
-        helper.getContacts(component, account.Id);
 
+        helper.getContacts(component, account.Id);
+        component.set("v.accountId", account.Id)
+    },
+    reloadData: function (component, event, helper) {
+        helper.getContacts(component, component.get("v.accountId"));
     },
     handleRowAction: function (cmp, event, helper) {
-        console.log('action');
+
+        let action = event.getParam('action');
+        let row = event.getParam('row');
+        switch (action.name) {
+            case 'edit_contact':
+                helper.editContact(cmp, row.Id);
+        }
+
     }
 });

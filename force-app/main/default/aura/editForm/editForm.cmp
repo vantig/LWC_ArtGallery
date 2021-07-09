@@ -1,0 +1,11 @@
+<aura:component access="global">
+    <aura:attribute name="id" type="string"/>
+    <aura:registerEvent name="submitForm" type="c:submitForm"/>
+    <lightning:recordEditForm recordId="{!v.id}" objectApiName="Contact" onsuccess="{!c.handleSubmitForm}">
+        <lightning:messages/>
+        <lightning:inputField fieldName="FirstName"/>
+        <lightning:inputField fieldName="LastName"/>
+        <lightning:inputField fieldName="Email"/>
+        <lightning:button class="slds-m-top_small" variant="brand" type="submit" name="update" label="Update"/>
+    </lightning:recordEditForm>
+</aura:component>

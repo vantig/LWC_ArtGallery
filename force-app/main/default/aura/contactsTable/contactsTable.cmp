@@ -3,8 +3,12 @@
     <aura:handler event="c:selectAccount"
                   action="{!c.handleSelectAccount}"/>
     <aura:handler name="init" value="{! this }" action="{! c.init }"/>
+    <aura:handler event="c:submitForm"
+                  action="{!c.reloadData}"/>
     <aura:attribute name="columns" type="List"/>
     <aura:attribute name="contacts" type="Contact[]"/>
+    <aura:attribute name="accountId" type="string"/>
+    <aura:registerEvent name="editRecord" type="c:editRecord"/>
     <aura:renderIf isTrue="{!empty(v.contacts)}">
         <h1>nothing to show :(</h1>
     </aura:renderIf>

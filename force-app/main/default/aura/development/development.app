@@ -1,3 +1,3 @@
 <aura:application description="development" implements="force:appHostable" >
-    <c:accountsTable/>
+    <c:modalOpener />
 </aura:application>

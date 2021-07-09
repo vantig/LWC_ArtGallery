@@ -1,0 +1,3 @@
+<aura:event type="COMPONENT" description="editRecord">
+    <aura:attribute name="recordId" type="string"/>
+</aura:event>

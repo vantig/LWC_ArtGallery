@@ -11,5 +11,11 @@
             }
         });
         $A.enqueueAction(action);
+    },
+    editContact: function (cmp, id) {
+        let event = cmp.getEvent("editRecord");
+        event.setParam("recordId", id);
+        event.fire();
+
     }
 });

@@ -21,5 +21,8 @@
             case 'show_contacts':
                 helper.showContacts(cmp, row);
         }
+    },
+    reloadData: function (cmp, event, helper) {
+        helper.getData(cmp);
     }
 })
