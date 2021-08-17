@@ -1,0 +1,8 @@
+<aura:component description="modalOpener" implements="flexipage:availableForAllPageTypes">
+    <aura:handler name="editRecord" event="c:editRecord"
+                  action="{!c.handleEditRecord}"/>
+    <aura:handler event="c:submitForm"
+                  action="{!c.handleSubmitForm}"/>
+    <lightning:overlayLibrary aura:id="overlayLib"/>
+    <c:contactsTable/>
+</aura:component>

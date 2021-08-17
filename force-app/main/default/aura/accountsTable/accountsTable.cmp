@@ -1,0 +1,21 @@
+<aura:component description="accountsTable" implements="flexipage:availableForAllPageTypes" controller="AccountController" >
+    <aura:registerEvent name="selectAccount" type="c:selectAccount"/>
+
+    <!-- attributes -->
+    <aura:attribute name="data" type="Object"/>
+    <aura:attribute name="columns" type="List"/>
+
+    <!-- handlers-->
+    <aura:handler name="init" value="{! this }" action="{! c.init }"/>
+    <aura:handler event="c:submitForm"
+                  action="{!c.reloadData}"/>
+
+    <!--body-->
+
+    <lightning:datatable
+            keyField="id"
+            data="{! v.data }"
+            columns="{! v.columns }"
+            onrowaction="{! c.handleRowAction }"
+            hideCheckboxColumn="true"/>
+</aura:component>

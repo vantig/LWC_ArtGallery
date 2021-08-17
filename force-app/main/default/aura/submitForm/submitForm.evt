@@ -1,0 +1,7 @@
+<!--
+ - Created by igordeychik on 7/9/2021.
+ -->
+
+<aura:event type="APPLICATION" description="submitForm">
+
+</aura:event>

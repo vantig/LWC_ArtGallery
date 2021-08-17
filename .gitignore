@@ -16,6 +16,7 @@ IlluminatedCloud/
 .localdevserver/
 scripts/
 manifest/
+objects/
 # LWC VSCode autocomplete
 **/lwc/jsconfig.json
 
@@ -48,3 +49,5 @@ ehthumbs.db
 $RECYCLE.BIN/
 # Local environment variables
 .env
+#NPM
+package-lock.json
