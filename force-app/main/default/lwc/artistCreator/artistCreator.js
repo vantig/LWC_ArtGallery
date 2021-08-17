@@ -1,5 +1,4 @@
 import {LightningElement} from 'lwc';
-import {reduceErrors} from 'c/ldsUtils';
 import {ShowToastEvent} from 'lightning/platformShowToastEvent';
 import createContactWithUser from '@salesforce/apex/ArtistHelper.createContactWithUser';
 import NAME_FIELD from '@salesforce/schema/Contact.Name';
@@ -8,12 +7,14 @@ import PHONE_FIELD from '@salesforce/schema/Contact.Phone';
 import BIRTHDATE_FIELD from '@salesforce/schema/Contact.Birthdate';
 import CONTACT_OBJECT from '@salesforce/schema/Contact'
 
+
 export default class ArtistCreator extends LightningElement {
     object = CONTACT_OBJECT;
     nameField = NAME_FIELD;
     emailField = EMAIL_FIELD;
     phoneField = PHONE_FIELD;
     birthdateField = BIRTHDATE_FIELD;
+
 
     handleSubmit(event) {
         event.preventDefault();
@@ -31,7 +32,7 @@ export default class ArtistCreator extends LightningElement {
                     ]
                 });
                 this.dispatchEvent(evt);
-                 evt = new ShowToastEvent({
+                evt = new ShowToastEvent({
                     variant: "success",
                     message: "User record {0} created!",
                     messageData: [
@@ -43,7 +44,6 @@ export default class ArtistCreator extends LightningElement {
                     ]
                 });
                 this.dispatchEvent(evt);
-                this.resetFields();
             })
             .catch(error => {
                 const evt = new ShowToastEvent({
@@ -53,7 +53,6 @@ export default class ArtistCreator extends LightningElement {
                 this.dispatchEvent(evt);
             });
     }
-
 
 
     resetFields() {

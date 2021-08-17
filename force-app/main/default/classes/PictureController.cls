@@ -5,7 +5,8 @@ public with sharing class PictureController {
         try {
             insert picture;
             pictureId = picture.Id;
-            DocumentController.uploadNewDocument(pictureId,file,fileName);
+            picture.ContentVersionId__c = DocumentController.uploadNewDocument(pictureId, file, fileName);
+            update picture;
         } catch (Exception ex) {
             Database.delete(picture, false);
             throw new AuraHandledException(ex.getMessage());

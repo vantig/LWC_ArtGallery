@@ -1,0 +1,16 @@
+<template>
+        <lightning-card title="First Table">
+            <template if:true={records}>
+                <lightning-datatable key-field="Id"
+                                     data={records}
+                                     columns={columns}
+                                     onsave={handleSave}
+                                     draft-values={saveDraftValues}
+                                     onrowaction={handleRowAction}
+                                     hide-checkbox-column
+                                     show-row-number-column>
+                </lightning-datatable>
+            </template>
+
+        </lightning-card>
+</template>

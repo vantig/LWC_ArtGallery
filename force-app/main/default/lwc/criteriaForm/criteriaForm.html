@@ -1,0 +1,14 @@
+<template>
+    <lightning-layout>
+        <lightning-layout-item class="slds-align-middle">
+            <lightning-combobox
+                    value={selectedValue}
+                    options={searchOptions}
+                    onchange={handleSearchOptionChange}
+                    label="Sort By">
+
+            </lightning-combobox>
+            <lightning-input type="text" label="Enter Artist Name" onchange={onNameChange}></lightning-input>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

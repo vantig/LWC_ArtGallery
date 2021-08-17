@@ -1,21 +1,8 @@
 <template>
     <lightning-tabset variant="scoped">
         <lightning-tab label="Gallery">
-            <div class="slds-scrollable_y">
-
-                <template if:true={pictures}>
-                    <lightning-layout multiple-rows horizontal-align="center">
-                        <template for:each={pictures.data} for:item="picture">
-                            <lightning-layout-item key={picture.Id} padding="around-small" size="12"
-                                                   small-device-size="6"
-                                                   medium-device-size="4" large-device-size="3">
-                                <c-picture-tile picture={picture}>
-                                </c-picture-tile>
-                            </lightning-layout-item>
-                        </template>
-                    </lightning-layout>
-                </template>
-            </div>
+            <c-criteria-form onnamesearch={filterByName} onsearch={searchPictures}></c-criteria-form>
+            <c-pictures-search-result></c-pictures-search-result>
         </lightning-tab>
         <lightning-tab label="Create Artist">
             <div class="slds-scrollable_y">

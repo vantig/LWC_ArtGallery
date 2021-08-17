@@ -16,6 +16,6 @@ public with sharing class DocumentController {
                 Visibility = 'AllUsers'
         );
         insert contentDocumentLink;
-        return documentId;
+        return contentVersion.Id;
     }
 }

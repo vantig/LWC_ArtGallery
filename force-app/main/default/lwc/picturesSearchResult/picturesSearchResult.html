@@ -1,0 +1,19 @@
+<template>
+    <div class="slds-scrollable_y">
+        <template if:true={pictures}>
+            <lightning-layout multiple-rows horizontal-align="center">
+                <template for:each={pictures} for:item="picture">
+                    <lightning-layout-item key={picture.Id} padding="around-small" size="12"
+                                           small-device-size="6"
+                                           medium-device-size="3" large-device-size="2">
+                        <c-picture-tile picture={picture}>
+                        </c-picture-tile>
+                    </lightning-layout-item>
+                </template>
+            </lightning-layout>
+        </template>
+        <template if:false={pictures}>
+            <h2>Sorry, we did not find any pictures :(</h2>
+        </template>
+    </div>
+</template>
