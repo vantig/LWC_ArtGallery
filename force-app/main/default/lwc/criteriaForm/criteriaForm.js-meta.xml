@@ -1,21 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
+
 
 <LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
-    
-    <apiVersion>51.0</apiVersion>
-    
-    <description>Criteria Form</description>
-    
-    <isExposed>true</isExposed>
-    
-    <masterLabel>Criteria Form</masterLabel>
-    
-=======
-<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>51.0</apiVersion>
     <description>Criteria Form</description>
     <isExposed>true</isExposed>
     <masterLabel>Criteria Form</masterLabel>
->>>>>>> origin/main
 </LightningComponentBundle>

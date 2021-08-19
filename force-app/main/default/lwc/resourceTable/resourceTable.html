@@ -1,16 +1,16 @@
-<template>
-        <lightning-card title="First Table">
-            <template if:true={records}>
-                <lightning-datatable key-field="Id"
-                                     data={records}
-                                     columns={columns}
-                                     onsave={handleSave}
-                                     draft-values={saveDraftValues}
-                                     onrowaction={handleRowAction}
-                                     hide-checkbox-column
-                                     show-row-number-column>
-                </lightning-datatable>
-            </template>
+<!--
+ - Created by igordeychik on 8/16/2021.
+ -->
 
-        </lightning-card>
+<!-- Resource Table -->
+<template>
+    <lightning-datatable
+            key-field="id"
+            data={data}
+            show-row-number-column
+            row-number-offset={rowOffset}
+            hide-checkbox-column
+            columns={columns}>
+            onrowaction={handleRowAction}>
+    </lightning-datatable>
 </template>

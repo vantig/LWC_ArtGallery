@@ -28,7 +28,4 @@ export default class BoatSearchForm extends LightningElement {
         });
         this.dispatchEvent(evt);
     }
-
 }
-
-
