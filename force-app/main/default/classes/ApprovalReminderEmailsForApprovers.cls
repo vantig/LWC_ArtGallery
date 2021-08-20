@@ -10,7 +10,7 @@ global class ApprovalReminderEmailsForApprovers implements Database.Batchable<SO
                 SELECT TargetObject.Id,TargetObject.Name, (SELECT Actor.EMAIL, Actor.NAME FROM Workitems)
                 FROM ProcessInstance
                 WHERE IsDeleted = FALSE AND TargetObject.Type = :TARGET_TYPE
-                AND Status = :TARGET_STATUS
+                AND Status = :TARGET_STATUS AND SystemModstamp < TODAY
         ]);
     }
     global void execute(Database.BatchableContext context, List<SObject> batch) {
